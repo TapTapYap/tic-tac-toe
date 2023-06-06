@@ -20,15 +20,25 @@
 .board {
   gap: 10px;
   border: 1px red dotted;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: gainsboro;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
 .boardTiles {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border: 2px green solid;
+  background-color: white;
+}
+
+.scoreDisplayContainer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .scoreDisplay {
@@ -36,8 +46,15 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   border: 1px blue solid;
-  width: 100px;
-  height: 40px;
+  text-align: center;
+  padding: 10px;
+  height: 1fr;
+  background-color: gainsboro;
+  width: 374px;
+}
+
+.scoreDisplay > div {
+  background-color: white;
 }
 
 .scoreXDisplay {
@@ -45,19 +62,41 @@
   width: 1fr;
   height: 1fr;
 }
+
+.scoreX {
+  align-self: center;
+  justify-self: center;
+}
+
 .scoreODisplay {
   border: 1px black solid;
   width: 1fr;
   height: 1fr;
 }
 
+.scoreO {
+  align-self: center;
+  justify-self: center;
+}
+
+.characterSelectContainer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
 .characterSelect {
   display: grid;
-
+  grid-template-columns: 1fr 1fr;
   border: 1px black dotted;
+  width: 374px;
   justify-content: center;
+  align-items: center;
 }
 
 .characterSelect > button {
   border-radius: 15px;
+  height: 30px;
+  width: 60px;
+  justify-self: center;
 }
