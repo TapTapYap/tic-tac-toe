@@ -24,12 +24,13 @@ const playerInfo = (() => {
 
 const playerFactory = (name) => {
   const sayName = function () {
-    console.log(`This is ${name}`);
+    console.log(`This is ${player}`);
   };
+  let player = name;
+  let playerValue = value;
   return {
     sayName,
-    name,
+    player,
+    playerValue,
   };
 };
-
-const player1 = playerFactory("joe");
