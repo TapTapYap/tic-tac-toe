@@ -12,14 +12,6 @@ const gameModule = (() => {
 const playerInfo = (() => {
   const playerName = document.getElementById("playerName");
   const blockedGameBoard = document.getElementById("blocked");
-
-  playerName.addEventListener("input", function () {
-    if (this.inputMode.valueOf.trim() !== "") {
-      blockedGameBoard.id.remove("blocked");
-    } else {
-      blockedGameBoard.id.add("blocked");
-    }
-  });
 })();
 
 const playerFactory = (name) => {
