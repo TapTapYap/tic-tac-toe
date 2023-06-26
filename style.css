@@ -28,10 +28,10 @@
   grid-template-rows: 1fr 1fr 1fr;
 }
 
-#blocked {
+/* #blocked {
   pointer-events: none;
   opacity: 0;
-}
+} */
 
 .boardTiles {
   width: 100px;
