@@ -29,7 +29,7 @@ const gameModule = (() => {
       board[index] = game.activePlayer.marker;
 
       // remove event listener from the marked index
-      tiles.getElementsByClassName.pointerEvents = "none";
+      tiles.style.pointerEvents = "none";
 
       // Update remaining spots
       game.remainingSpots -= 1;
@@ -86,7 +86,7 @@ const game = (() => {
         gameModule.board[item[1]] === this.activePlayer.marker &&
         gameModule.board[item[2]] === this.activePlayer.marker
       ) {
-        subText.innerHTML = `<b>${this.activePlayer.name} wins!</b>`;
+        subText.innerHTML = `<b>${this.activePlayer.player} wins!</b>`;
         this.winnerDeclared = true;
       }
     });
@@ -109,6 +109,13 @@ const game = (() => {
   // declare tie
   function declareTie() {
     subText.innerHTML = "<br>Tie game!</br>";
+  }
+
+  function resetGame() {
+    let resetBtn = document.querySelector(".reset-btn");
+    resetBtn.addEventListener("click", function () {
+      this.activePlayer = playerOne;
+    });
   }
 
   return {

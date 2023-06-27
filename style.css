@@ -53,10 +53,14 @@
 
 .X::after {
   content: "X";
-  pointer-events: none;
 }
 
 .O::after {
   content: "O";
-  pointer-events: none;
+}
+
+.reset-btn {
+  max-width: max-content;
+  display: flex;
+  justify-self: center;
 }
