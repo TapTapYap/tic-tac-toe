@@ -16,9 +16,10 @@ const gameModule = (() => {
   }
 
   let boardTilesContainer = document.querySelector(".board");
-  let tiles = document.querySelector(".boardTiles");
+  let tiles = document.querySelectorAll(".boardTiles");
 
-  Array.from(boardTilesContainer.children).forEach((tiles, index) => {
+  // add event listeners to each tile
+  Array.from(tiles).forEach((tiles, index) => {
     tiles.addEventListener("click", () => {
       // Display active payer marker
       tiles.classList.add(game.activePlayer.marker);
@@ -53,8 +54,8 @@ const gameModule = (() => {
 // Game IIFE object
 const game = (() => {
   // declare players
-  const playerOne = createPlayer("Player 1", "X");
-  const PlayerTwo = createPlayer("Player 2", "O");
+  const playerOne = playerFactory("Player 1", "X");
+  const playerTwo = playerFactory("Player 2", "O");
 
   // starting point
   let activePlayer = playerOne;
