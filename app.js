@@ -48,6 +48,23 @@ const gameModule = (() => {
       }
     });
   });
+  let resetBtn = document.querySelector(".reset-btn");
+  resetBtn.addEventListener("click", function () {
+    // Clear the board
+    this.board = [];
+    Array.from(tiles).forEach((tile) => {
+      tile.classList.remove(game.playerOne.marker, game.playerTwo.marker);
+      tile.removeAttribute("data");
+      tile.style.pointerEvents = "auto";
+    });
+
+    // Reset game state
+    game.activePlayer = game.playerOne;
+    game.winnerDeclared = false;
+    game.remainingSpots = 9;
+    game.subText.textContent = ""; // Clear winner/tie text
+    game.alertNextPlayer();
+  });
   return { board };
 })();
 
@@ -111,13 +128,6 @@ const game = (() => {
     subText.innerHTML = "<br>Tie game!</br>";
   }
 
-  function resetGame() {
-    let resetBtn = document.querySelector(".reset-btn");
-    resetBtn.addEventListener("click", function () {
-      this.activePlayer = playerOne;
-    });
-  }
-
   return {
     activePlayer,
     remainingSpots,
@@ -126,5 +136,8 @@ const game = (() => {
     nextPlayer,
     declareTie,
     winnerDeclared,
+    playerOne,
+    playerTwo,
+    subText,
   };
 })();
