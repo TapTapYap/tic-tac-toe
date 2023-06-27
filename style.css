@@ -28,11 +28,6 @@
   grid-template-rows: 1fr 1fr 1fr;
 }
 
-/* #blocked {
-  pointer-events: none;
-  opacity: 0;
-} */
-
 .boardTiles {
   width: 100px;
   height: 100px;
@@ -43,5 +38,25 @@
 .boardTiles:hover {
   cursor: pointer;
   background-color: lightgreen;
-  opacity: 0.1;
+}
+
+.X,
+.O {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: green;
+}
+
+.X::after {
+  content: "X";
+  pointer-events: none;
+}
+
+.O::after {
+  content: "O";
+  pointer-events: none;
 }
