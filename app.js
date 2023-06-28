@@ -11,17 +11,12 @@ const gameModule = (() => {
   // generate board array
   let board = [];
 
-  for (i = 0; i < 9; i++) {
-    board.push("");
-  }
-
-  let boardTilesContainer = document.querySelector(".board");
   let tiles = document.querySelectorAll(".boardTiles");
 
   // add event listeners to each tile
   Array.from(tiles).forEach((tiles, index) => {
     tiles.addEventListener("click", () => {
-      // Display active payer marker
+      // Display active player marker
       tiles.classList.add(game.activePlayer.marker);
       tiles.setAttribute("data", game.activePlayer.marker);
 
@@ -62,8 +57,7 @@ const gameModule = (() => {
     game.activePlayer = game.playerOne;
     game.winnerDeclared = false;
     game.remainingSpots = 9;
-    game.subText.textContent = ""; // Clear winner/tie text
-    game.alertNextPlayer();
+    game.playerName.textContent = "Player 1"; // Clear winner/tie text
   });
   return { board };
 })();
@@ -74,7 +68,7 @@ const game = (() => {
   const playerOne = playerFactory("Player 1", "X");
   const playerTwo = playerFactory("Player 2", "O");
 
-  // starting point
+  // initializing variables
   let activePlayer = playerOne;
   let winnerDeclared = false;
   let remainingSpots = 9;
@@ -139,5 +133,6 @@ const game = (() => {
     playerOne,
     playerTwo,
     subText,
+    playerName,
   };
 })();
